@@ -37,6 +37,20 @@ export const contentBlockSchema: Template = {
     },
   },
   fields: [
+    {
+      type: 'reference',
+      label: 'Tag1',
+      name: 'tag1',
+      collections: ['tag'],
+      ui: {
+        optionComponent: (
+          props: {
+            name?: string;
+          },
+          _internalSys: { path: string }
+        ) => props.name || _internalSys.path
+      },
+    },
     sectionBlockSchemaField as any,
     {
       type: "rich-text",
